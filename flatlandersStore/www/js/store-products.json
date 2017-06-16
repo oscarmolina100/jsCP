@@ -6,10 +6,9 @@
             "canPurchase": false,
             "soldOut": true,
             "images": [
-                {
-                    "full": "gem-01.gif",
-                    "thumb": "gem-01.gif"
-                }
+                    "public/images/gem-01.gif",
+                    "public/images/gem-02.gif",
+                    "public/images/gem-03.gif"
             ],
             "reviews": [
                 {
@@ -36,10 +35,9 @@
             "canPurchase": false,
             "soldOut": false,
             "images": [
-                {
-                    "full": "gem-02.gif",
-                    "thumb": "gem-02.gif"
-                }
+                    "public/images/gem-04.gif",
+                    "public/images/gem-05.gif",
+                    "public/images/gem-06.gif"
             ],
             "reviews": [
                 {
@@ -66,10 +64,9 @@
             "canPurchase": false,
             "soldOut": false,
             "images": [
-                {
-                    "full": "gem-03.gif",
-                    "thumb": "gem-03.gif"
-                }
+                    "public/images/gem-07.gif",
+                    "public/images/gem-08.gif",
+                    "public/images/gem-09.gif"
             ],
             "reviews": [
                 {

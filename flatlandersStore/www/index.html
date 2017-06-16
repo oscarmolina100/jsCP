@@ -12,7 +12,9 @@
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="product in s.products">
             <h3><product-title></product-title></h3>
-            <img class="img-thumbnail center-block" ng-src="public/images/{{product.images[0].full}}" alt="" >
+            <product-gallery></product-gallery>
+            <!--<img class="img-thumbnail center-block" ng-src="public/images/{{product.images[0].full}}" alt="" > -->
+            <br>
             <product-panels></product-panels>
         </li>
     </ul>
