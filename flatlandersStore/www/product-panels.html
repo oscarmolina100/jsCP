@@ -19,38 +19,6 @@
                         {{review.body}}
                         <cite>by: {{review.author}}</cite>
                     </blockquote>
-                    <form name="reviewForm" ng-controller="ReviewController as r"
-                        ng-submit="reviewForm.$valid && r.addReview(product)" novalidate>
-                        <blockquote>
-                            <b>Estrellas: {{r.review.stars}}</b>
-                            {{r.review.body}}
-                            <cite>by: {{r.review.author}}</cite>
-                        </blockquote>
-                        <div class="form-group">
-                            <label for="stars">Califica el producto</label>
-                            <select ng-model="r.review.stars" id="stars" class="form-control" required>
-                                <option value="1">1 Estrella</option>
-                                <option value="2">2 Estrellas</option>
-                                <option value="3">3 Estrellas</option>
-                                <option value="4">4 Estrellas</option>
-                                <option value="5">5 Estrellas</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="body">Califica el producto</label>
-                            <textarea ng-model="r.review.body" class="form-control" name="" id="body" cols="10" rows="10" 
-                            placeholder="Escribe una reseña del producto" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="author">Correo electrónico: </label>
-                            <input ng-model="r.review.author" class="form-control" type="email" id="author" placeholder="john@example.com" required/>
-                        </div>
-                        <br>
-                        <!--<pre>reviewForm is {{reviewForm.$valid}}</pre>-->
-                        <div class="form-group">
-                            <input class="btn btn-info"
-                         type="submit" value="Publicar reseña">
-                        </div>
-                    </form>
+                    <product-reviews></product-reviews>
                 </div>
 </section>

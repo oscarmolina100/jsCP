@@ -114,12 +114,6 @@
     });
 
     app.controller('ReviewController', function(){
-        this.review = {};
-
-        this.addReview = function(product){
-            product.reviews.push(this.review);
-            this.review = {};
-        }
     });
 
     app.directive('productTitle', function(){
@@ -153,7 +147,12 @@
             restrict: 'E',
             templateUrl: 'product-reviews.html',
             controller: function(){
-                
+                this.review = {};
+
+                this.addReview = function(product){
+                    product.reviews.push(this.review);
+                    this.review = {};
+                }
             },
             controllerAs: 'r'
         }
