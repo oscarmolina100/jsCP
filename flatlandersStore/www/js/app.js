@@ -2,119 +2,15 @@
 
     let app = angular.module('store', []);
 
-    let gem = {
-        name: 'Dodecahedron',
-        price: 295,
-        description: 'lorem ipsum dolo',
-        canPurchase: false,
-        soldOut: true,
-        images: [
-            {
-                full: '1.png',
-                thumb: '1.png'
-            }
-        ]
-    }
+    app.controller('StoreController', ['$http', function($http){
+        let s = this;
+        s.products = [];
 
-    let gems = [
-        {
-            name: 'Gema Dodecaedro',
-            price: 295,
-            description: 'Hermosa gema con forma de dodecaedro',
-            canPurchase: false,
-            soldOut: true,
-            images: [
-                {
-                    full: 'gem-01.gif',
-                    thumb: 'gem-01.gif'
-                }
-            ],
-            reviews: [
-                {
-                    stars: 5,
-                    body: 'I love this product!!!',
-                    author: 'alonsosalcido@gmail.com'
-                },
-                {
-                    stars: 4,
-                    body: 'Me gusta este producto',
-                    author: 'oscar_molina100@msn.com'
-                },
-                {
-                    stars: 1,
-                    body: 'Odio este producto',
-                    author: 'jesus@gmail.com'
-                }
-            ]
-        },
-        {
-            name: 'Gema Pentagonal ',
-            price: 365,
-            description: 'Gema con forma de pentágono',
-            canPurchase: false,
-            soldOut: false,
-            images: [
-                {
-                    full: 'gem-02.gif',
-                    thumb: 'gem-02.gif'
-                }
-            ],
-            reviews: [
-                {
-                    stars: 5,
-                    body: 'I love this product!!!',
-                    author: 'alonsosalcido@gmail.com'
-                },
-                {
-                    stars: 4,
-                    body: 'Me gusta este producto',
-                    author: 'oscar_molina100@msn.com'
-                },
-                {
-                    stars: 1,
-                    body: 'Odio este producto',
-                    author: 'jesus@gmail.com'
-                }
-            ]
-        },
-        {
-            name: 'Gema Prisma',
-            price: 895,
-            description: 'Bella piedra en forma de Prisma',
-            canPurchase: false,
-            soldOut: false,
-            images: [
-                {
-                    full: 'gem-03.gif',
-                    thumb: 'gem-03.gif'
-                }
-            ],
-            reviews: [
-                {
-                    stars: 5,
-                    body: 'I love this product!!!',
-                    author: 'alonsosalcido@gmail.com'
-                },
-                {
-                    stars: 4,
-                    body: 'Me gusta este producto',
-                    author: 'oscar_molina100@msn.com'
-                },
-                {
-                    stars: 1,
-                    body: 'Odio este producto',
-                    author: 'jesus@gmail.com'
-                }
-            ]
-        } 
-    ]
-
-    app.controller('StoreController', function(){
-        this.products = gems;
-    });
-
-    app.controller('ReviewController', function(){
-    });
+        $http.get('js/store-products.json').then(function(data){
+            console.log(data);
+            s.products = data.data;
+        })
+    }]);
 
     app.directive('productTitle', function(){
         return {
